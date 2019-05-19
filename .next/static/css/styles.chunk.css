@@ -6,11 +6,12 @@
 } */
 .search-bar_wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   align-self: center;
   width: 100%;
   height: 150px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .image-grid {
   display: grid;
@@ -28,8 +29,9 @@ img {
   object-fit: cover;
 }
 .search-bar {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 80%;
+  padding: 5px;
 }
 
 

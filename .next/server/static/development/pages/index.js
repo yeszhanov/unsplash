@@ -139,27 +139,53 @@ var ImageWrapper = function ImageWrapper(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
 var _jsxFileName = "/home/yerlan/\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B/projects/unsplash/components/SearchBar.js";
 
 
-var SearchBar = function SearchBar() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+var SearchBar = function SearchBar(_ref) {
+  var onSearch = _ref.onSearch;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  var handleSearch = function handleSearch() {
+    onSearch(value);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "search-bar_wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 8
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
     className: "search-bar",
+    placeholder: "Search ...",
+    onChange: function onChange(e) {
+      return setValue(e.target.value);
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 9
     },
     __self: this
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    onClick: function onClick() {
+      return handleSearch();
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, " \u0418\u0441\u043A\u0430\u0442\u044C "));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchBar);
@@ -434,7 +460,8 @@ var _jsxFileName = "/home/yerlan/\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u04
 
 
 
-var APP_ID = "75c17e375bb7f1947c0d7a32bbb85266511f0b099485492db887fb79c6ef40e6"; // "5fb3168316b9dbcd49a7a52129ae0f48c358dda1915d87bd96f7b7c3a35bf3b2"
+var APP_ID = // "75c17e375bb7f1947c0d7a32bbb85266511f0b099485492db887fb79c6ef40e6"
+"5fb3168316b9dbcd49a7a52129ae0f48c358dda1915d87bd96f7b7c3a35bf3b2";
 
 var Index = function Index() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])([]),
@@ -442,9 +469,33 @@ var Index = function Index() {
       images = _useState2[0],
       setData = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(""),
+      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState3, 2),
+      search = _useState4[0],
+      setSearch = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(null),
+      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState5, 2),
+      result = _useState6[0],
+      setResult = _useState6[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     getImages();
   }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    console.log(images);
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    searchImages();
+  }, [search]);
+
+  var searchImages = function searchImages(count) {
+    axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://api.unsplash.com/search/photos/?page=1&per_page=".concat(count, "&query=").concat(search, "&client_id=").concat(APP_ID)).then(function (data) {
+      setData(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.data.results));
+    }).catch(function (err) {
+      console.log("Error happened during fetching!", err);
+    });
+  };
 
   var getImages = function getImages() {
     var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
@@ -455,21 +506,30 @@ var Index = function Index() {
     });
   };
 
+  var _onSearch = function onSearch(val) {
+    setSearch(val);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: "wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 53
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SearchBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onSearch: function onSearch(val) {
+      return _onSearch(val);
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 54
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    loadMore: function loadMore() {
+    loadMore: search ? function () {
+      return searchImages(5);
+    } : function () {
       return getImages(5);
     },
     pageStart: 0,
@@ -479,20 +539,20 @@ var Index = function Index() {
       key: 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 60
       },
       __self: this
     }, "Loading ..."),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 55
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: "image-grid",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 65
     },
     __self: this
   }, images ? images.map(function (item, idx) {
@@ -501,7 +561,7 @@ var Index = function Index() {
       key: idx,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 68
       },
       __self: this
     });
