@@ -1,7 +1,20 @@
-const ImageWrapper = ({ url }) => (
-  <div className="image-item">
-    <img src={url} />
-  </div>
-)
+import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+
+const ImageWrapper = ({ url }) => {
+  const [isOpen, setTrigger] = useState(false)
+
+  const changeModalState = () => {
+    setTrigger(!isOpen)
+  }
+  return (
+    <div className="image-item">
+      <img src={url} onClick={() => changeModalState()} />
+      <Modal isOpen={isOpen} onCancel={() => changeModalState()}>
+        <img src={url} />
+      </Modal>
+    </div>
+  )
+}
 
 export default ImageWrapper
