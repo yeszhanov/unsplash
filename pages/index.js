@@ -79,11 +79,7 @@ class Index extends Component {
           }
           pageStart={0}
           hasMore={true}
-          loader={
-            <div className="loader" key={0}>
-              Loading ...
-            </div>
-          }
+          loader={<div className="loader" />}
         >
           <div className="image-grid">
             {isSearching

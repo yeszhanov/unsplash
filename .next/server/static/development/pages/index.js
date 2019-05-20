@@ -1007,13 +1007,12 @@ function (_Component) {
         hasMore: true,
         loader: react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "loader",
-          key: 0,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 82
           },
           __self: this
-        }, "Loading ..."),
+        }),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 76
@@ -1023,7 +1022,7 @@ function (_Component) {
         className: "image-grid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 84
         },
         __self: this
       }, isSearching ? result.map(function (item, idx) {
@@ -1032,7 +1031,7 @@ function (_Component) {
           key: idx,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 87
           },
           __self: this
         });
@@ -1042,7 +1041,7 @@ function (_Component) {
           key: idx,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 90
           },
           __self: this
         });
