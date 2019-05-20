@@ -193,8 +193,7 @@ var _jsxFileName = "/home/yerlan/\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u04
 
 
 var Modal = function Modal(_ref) {
-  var title = _ref.title,
-      isOpen = _ref.isOpen,
+  var isOpen = _ref.isOpen,
       onCancel = _ref.onCancel,
       children = _ref.children;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, isOpen && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1052,71 +1051,7 @@ function (_Component) {
   return Index;
 }(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Index); // const Index = () => {
-//   const [images, setData] = useState([])
-//   const [search, setSearch] = useState("")
-//   const [result, setResult] = useState(null)
-//   useEffect(() => {
-//     getImages()
-//   }, [])
-//   useEffect(() => {
-//     console.log(images)
-//   })
-//   useEffect(() => {
-//     searchImages()
-//   }, [search])
-//   const searchImages = count => {
-//     axios
-//       .get(
-//         `https://api.unsplash.com/search/photos/?page=1&per_page=${count}&query=${search}&client_id=${APP_ID}`,
-//       )
-//       .then(data => {
-//         setResult([...data.data.results, ...result])
-//       })
-//       .catch(err => {
-//         console.log("Error happened during fetching!", err)
-//       })
-//   }
-//   const getImages = (count = 10) => {
-//     axios
-//       .get(
-//         `https://api.unsplash.com/photos/random?client_id=${APP_ID}&count=${count}`,
-//       )
-//       .then(data => {
-//         setData([...images, ...data.data])
-//       })
-//       .catch(err => {
-//         console.log(err)
-//       })
-//   }
-//   const onSearch = val => {
-//     setSearch(val)
-//   }
-//   return (
-//     <div className="wrapper">
-//       <SearchBar onSearch={val => onSearch(val)} />
-//       <InfiniteScroll
-//         loadMore={search ? () => searchImages(5) : () => getImages(5)}
-//         pageStart={0}
-//         hasMore={true}
-//         loader={
-//           <div className="loader" key={0}>
-//             Loading ...
-//           </div>
-//         }
-//       >
-//         <div className="image-grid">
-//           {images
-//             ? images.map((item, idx) => {
-//                 return <ImageWrapper url={item.urls.small} key={idx} />
-//               })
-//             : null}
-//         </div>
-//       </InfiniteScroll>
-//     </div>
-//   )
-// }
-// export default Index
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
