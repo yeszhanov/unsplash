@@ -1006,6 +1006,7 @@ function (_Component) {
         hasMore: true,
         loader: react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "loader",
+          key: 0,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 82
